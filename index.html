@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweetkiwi — Coming Soon</title>
+<meta name="description" content="Sweetkiwi is getting a fresh new look. We will be back soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#E10098;
+    --orange:#FF9800;
+    --yellow:#FFC629;
+    --cream:#FFF8F1;
+    --ink:#2C2230;
+    --muted:#6d6470;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);background:var(--cream);
+    min-height:100%;display:flex;align-items:center;justify-content:center;
+    padding:40px 16px;position:relative;overflow-x:hidden;
+  }
+  /* chevron ribbons top & bottom (brand motif) */
+  .ribbon{position:fixed;left:0;width:100%;height:26px;z-index:1;
+    background:repeating-linear-gradient(135deg,var(--pink) 0 22px,var(--orange) 22px 44px,var(--yellow) 44px 66px);
+    opacity:.95;-webkit-mask:repeating-linear-gradient(90deg,#000 0 18px,transparent 18px 36px);
+    mask:repeating-linear-gradient(90deg,#000 0 18px,transparent 18px 36px);}
+  .ribbon.top{top:0}.ribbon.bottom{bottom:0;transform:scaleY(-1)}
+  .blob{position:fixed;border-radius:50%;z-index:0;opacity:.14;animation:float 8s ease-in-out infinite}
+  .b1{width:150px;height:150px;background:var(--pink);top:12%;left:6%}
+  .b2{width:100px;height:100px;background:var(--orange);top:22%;right:9%;animation-delay:1.2s}
+  .b3{width:120px;height:120px;background:var(--yellow);bottom:16%;right:12%;animation-delay:.6s;opacity:.3}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  @media(prefers-reduced-motion:reduce){.blob{animation:none}}
+
+  .card{position:relative;z-index:2;width:100%;max-width:640px;background:#fff;
+    border-radius:28px;padding:48px 46px 40px;text-align:center;
+    box-shadow:0 24px 60px rgba(225,0,152,.12),0 4px 14px rgba(0,0,0,.05);}
+  .logo{width:min(300px,72%);height:auto;display:block;margin:0 auto}
+  .eyebrow{display:inline-block;margin:22px auto 0;background:var(--orange);color:#fff;
+    font-weight:700;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;
+    padding:7px 16px;border-radius:999px;}
+  h1{font-family:"Fjalla One",sans-serif;font-weight:400;
+    font-size:clamp(30px,6vw,48px);line-height:1.05;color:var(--ink);
+    margin:20px 0 14px;letter-spacing:.3px;}
+  h1 .accent{color:var(--pink)}
+  .sub{font-size:16.5px;line-height:1.6;color:var(--muted);max-width:470px;margin:0 auto 26px}
+  form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+  input[type=email]{flex:1 1 220px;min-width:0;border:2px solid #efe6ec;border-radius:14px;
+    padding:14px 16px;font-size:15.5px;font-family:inherit;color:var(--ink);outline:none;transition:border-color .15s;}
+  input[type=email]:focus{border-color:var(--pink)}
+  button{flex:0 0 auto;border:none;cursor:pointer;background:var(--pink);color:#fff;
+    font-family:"Fjalla One",sans-serif;letter-spacing:.5px;font-size:16px;padding:14px 26px;border-radius:14px;
+    transition:transform .12s,background .15s;}
+  button:hover{background:#b8007c;transform:translateY(-1px)}
+  .note{font-size:12.5px;color:#9a8fa0;margin-top:12px}
+  .thanks{display:none;font-family:"Fjalla One",sans-serif;color:var(--orange);font-size:19px;margin-top:4px}
+  .socials{display:flex;gap:14px;justify-content:center;margin-top:30px}
+  .socials a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:#fdf1f8;color:var(--pink);transition:transform .12s,background .15s,color .15s;}
+  .socials a:hover{background:var(--pink);color:#fff;transform:translateY(-2px)}
+  .socials svg{width:19px;height:19px;fill:currentColor}
+  .foot{margin-top:26px;font-size:13px;color:#9a8fa0;line-height:1.7}
+  .foot a{color:var(--pink);text-decoration:none;font-weight:700}
+  .foot a:hover{text-decoration:underline}
+  @media(max-width:480px){.card{padding:38px 24px 32px;border-radius:22px}}
+</style>
+</head>
+<body>
+  <div class="ribbon top" aria-hidden="true"></div>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+  <main class="card">
+    <svg class="logo" viewBox="0 0 8080 1159" role="img" aria-label="Sweetkiwi" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.5969 1109.12V884.622C87.7941 884.622 170.318 946.978 241.92 946.978C279.299 946.978 307.315 929.862 307.315 901.774C307.315 834.766 198.335 875.283 73.7859 781.75C-39.8754 697.556 -10.2986 511.875 87.7942 432.51C189.008 342.102 388.279 343.736 528.396 399.806V607.148C459.915 597.773 385.158 557.221 326.004 557.221C285.54 557.221 262.169 572.81 262.169 599.3C262.169 675.682 572.016 619.576 572.016 875.248C572.016 1048.29 439.666 1158.97 234.153 1158.97C158.169 1158.96 83.1505 1141.93 14.5969 1109.12Z" fill="#E10098"/>
+      <path d="M572.016 385.78H858.492L997.227 752.135L1154.47 385.78H1338.03L1493.72 763.179L1641.64 385.922H1926.38L1588.69 1132.48H1406.51L1243.06 748.975L1087.34 1132.48H905.198L572.016 385.78Z" fill="#E10098"/>
+      <path d="M1883.47 753.698C1886.59 440.323 2126.36 368.628 2277.36 368.628C2615.22 368.628 2671.29 674.014 2654.16 836.294H2140.37C2143.49 884.623 2187.07 951.665 2274.28 951.665H2288.46C2375.67 951.665 2401.95 897.087 2401.95 897.087H2646.29C2594.94 1082.63 2439.22 1155.88 2285.09 1157.45C2162.18 1159.01 1880.27 1104.43 1883.47 753.698ZM2405.14 669.504C2400.46 597.774 2349.07 563.471 2275.91 563.471H2272.79C2202.71 563.471 2146.68 597.774 2142 669.504H2405.14Z" fill="#E10098"/>
+      <path d="M2729.81 753.698C2732.93 440.323 2972.7 368.628 3123.7 368.628C3461.57 368.628 3517.6 674.014 3500.47 836.294H2986.74C2989.83 884.623 3033.45 951.665 3120.62 951.665H3134.8C3222.01 951.665 3248.29 897.087 3248.29 897.087H3492.74C3441.35 1082.63 3285.67 1155.88 3131.54 1157.45C3008.48 1159.01 2726.69 1104.43 2729.81 753.698ZM3251.37 669.504C3246.69 597.774 3195.31 563.471 3122.14 563.471H3119.02C3048.98 563.471 2992.91 597.774 2988.27 669.504H3251.37Z" fill="#E10098"/>
+      <path d="M3641.94 830.08V619.612H3529.83V385.78H3641.94V167.5H3906.64V385.78H4079.45V619.612H3906.64V900.141L4079.45 829.973V1087.21C4079.45 1087.21 3962.67 1149.56 3878.59 1149.56C3665.31 1149.67 3641.94 1007.77 3641.94 830.08Z" fill="#E10098"/>
+      <path d="M4212.05 112.957H4475.19V632.076L4716.35 385.779H5066.62L4651.13 788.036C4710.28 887.818 4753.97 912.746 4780.36 912.746C4855.08 912.746 4865.97 786.473 4865.97 786.473H5101.06C5071.48 1174.67 4685.39 1279.14 4475.19 951.736V1132.48H4212.05V112.957Z" fill="#FF9800"/>
+      <path d="M7475.07 385.78H7738.18V1132.48H7475.07V385.78Z" fill="#FF9800"/>
+      <path d="M7868.01 1024.89H7840.1V1003.05H7920.39V1024.89H7892.27V1132.48H7868.01V1024.89Z" fill="#FF9800"/>
+      <path d="M7940 1003.05H7972.73C7983.12 1028.82 7995.49 1053.76 8009.72 1077.62C8023.99 1053.77 8036.35 1028.84 8046.71 1003.05H8079.34V1132.48H8055.08V1039.34C8042.12 1067.09 8026.9 1093.73 8009.58 1118.99C7992.41 1093.64 7977.2 1067.01 7964.08 1039.34V1132.48H7939.86L7940 1003.05Z" fill="#FF9800"/>
+      <path d="M7606.61 309.078C7691.84 309.078 7760.94 239.889 7760.94 154.539C7760.94 69.1895 7691.84 0 7606.61 0C7521.37 0 7452.27 69.1895 7452.27 154.539C7452.27 239.889 7521.37 309.078 7606.61 309.078Z" fill="#FF9800"/>
+      <path d="M5195 385.78H5458.14V1132.48H5195V385.78Z" fill="#FF9800"/>
+      <path d="M7271.58 387.058C7085.04 387.058 7011.1 571.709 6951.7 720.105C6931.55 770.387 6896.02 859.02 6869.07 888.635C6842.15 859.02 6806.61 770.387 6786.47 720.105C6727.07 571.709 6653.13 387.058 6466.59 387.058C6280.05 387.058 6206.11 571.709 6146.7 720.105C6126.6 770.387 6091.03 859.02 6064.11 888.635C6037.19 859.02 6001.62 770.387 5981.51 720.105C5922.08 571.709 5848.14 387.058 5661.63 387.058H5553.64V637.793H5621.95C5634.5 637.903 5646.84 641.086 5657.89 647.065C5668.93 653.044 5678.35 661.637 5685.32 672.096C5708.37 711.796 5733.37 774.258 5749.16 813.425C5805.33 953.725 5874.56 1126.37 6039.6 1144.77C6046.15 1145.53 6052.73 1145.95 6059.32 1146.05V1146.47C6245.86 1146.47 6319.8 961.821 6379.21 813.425C6400.48 760.16 6439.49 663.325 6466.66 639.995C6494.04 663.325 6532.76 760.054 6554.11 813.425C6613.51 961.821 6687.49 1146.47 6874 1146.47V1146.05C6880.6 1145.95 6887.19 1145.53 6893.75 1144.77C7058.8 1126.37 7128.02 953.725 7184.2 813.425C7199.87 774.364 7224.91 711.796 7248.03 672.096C7255.01 661.634 7264.43 653.039 7275.48 647.06C7286.53 641.082 7298.88 637.9 7311.44 637.793H7379.74V387.058H7271.58Z" fill="#FF9800"/>
+      <path d="M5326.57 309.078C5411.81 309.078 5480.91 239.889 5480.91 154.539C5480.91 69.1895 5411.81 0 5326.57 0C5241.33 0 5172.23 69.1895 5172.23 154.539C5172.23 239.889 5241.33 309.078 5326.57 309.078Z" fill="#FF9800"/>
+    </svg>
+
+    <div><span class="eyebrow">Frozen Whipped Greek Yogurt</span></div>
+    <h1>We're whipping up<br><span class="accent">something new.</span></h1>
+    <p class="sub">Our site is getting a fresh new look. We'll be back soon with the good stuff. Drop your email and we'll let you know the moment we're live.</p>
+
+    <form id="notify" novalidate>
+      <input type="email" id="email" placeholder="you@email.com" aria-label="Email address" required>
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="thanks" id="thanks">Thanks! We'll be in touch soon.</p>
+    <p class="note">No spam, just one friendly note when we relaunch.</p>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/sweetkiwiyogurt" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.86.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.42-.37-1.06-.42-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.4 2.21 8.8 2.2 12 2.2Zm0 1.98c-3.14 0-3.52.01-4.76.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7-.06 1.24-.07 1.62-.07 4.76s.01 3.52.07 4.76c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.62.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.62.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.19-1.38-.32-1.7a2.9 2.9 0 0 0-.68-1.06 2.9 2.9 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32-1.24-.06-1.62-.07-4.76-.07Zm0 3.37a5.05 5.05 0 1 1 0 10.1 5.05 5.05 0 0 1 0-10.1Zm0 1.98a3.07 3.07 0 1 0 0 6.14 3.07 3.07 0 0 0 0-6.14Zm5.27-3.49a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36Z"/></svg></a>
+      <a href="https://www.tiktok.com/@sweetkiwiyogurt" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.3v12.1a2.59 2.59 0 1 1-2.6-2.59c.17 0 .33.02.49.05V9.2a5.9 5.9 0 0 0-.49-.02 5.9 5.9 0 1 0 5.9 5.9V8.9a7.5 7.5 0 0 0 4.37 1.4V7a4.28 4.28 0 0 1-3.31-1.18Z"/></svg></a>
+      <a href="https://www.facebook.com/sweetkiwiyogurt" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.9 3.78-3.9 1.1 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg></a>
+      <a href="https://x.com/sweetkiwiyogurt" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.3l-7.2 8.23L22.5 21.75h-6.63l-5.2-6.8-5.95 6.8H1.4l7.7-8.8L1.5 2.25h6.8l4.7 6.21 5.24-6.21Zm-1.16 17.52h1.83L7.01 4.13H5.05l12.03 15.64Z"/></svg></a>
+    </div>
+
+    <p class="foot">Questions? <a href="mailto:hello@sweetkiwi.com">hello@sweetkiwi.com</a><br>&copy; <span id="yr"></span> Sweetkiwi. All rights reserved.</p>
+  </main>
+
+  <div class="ribbon bottom" aria-hidden="true"></div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('notify').addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=document.getElementById('email');
+    if(!email.value || !email.checkValidity()){ email.focus(); email.reportValidity&&email.reportValidity(); return; }
+    /* Front-end only. Wire to Shopify or Klaviyo to actually capture emails. */
+    this.style.display='none';
+    document.querySelector('.note').style.display='none';
+    document.getElementById('thanks').style.display='block';
+  });
+</script>
+</body>
+</html>
